@@ -1,0 +1,1 @@
+UPDATE metric SET clicks = clicks + 1 WHERE id_metric = 1;

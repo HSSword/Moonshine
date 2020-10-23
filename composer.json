@@ -1,0 +1,17 @@
+{
+  "require": {
+      "matthiasmullie/minify": "*",
+      "erusev/parsedown": "*",
+      "paquettg/php-html-parser": "*",
+      "stripe/stripe-php": "*",
+    "ext-zip": "*",
+    "ext-json": "*",
+    "ext-ctype": "*",
+    "ext-memcache": "*",
+    "ext-mysqli": "*",
+    "ext-xdebug": "*",
+    "ext-curl": "*",
+    "ext-gd": "*",
+    "ext-ssh2": "*"
+  }
+}

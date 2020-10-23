@@ -1,0 +1,97 @@
+///
+/// Radiate by Pixelarity
+/// pixelarity.com | hello@pixelarity.com
+/// License: pixelarity.com/license
+///
+
+/* Box */
+
+	.box {
+		background: _palette(bg-alt);
+		border-radius: _size(border-radius);
+		box-shadow: 0rem 1rem 5.125rem 0rem rgba(0,0,0,0.11);
+		margin: 4rem 0;
+		max-width: 100%;
+		overflow: hidden;
+		padding: 0;
+
+		.image.fit {
+			margin: 0;
+		}
+
+		&.center {
+			text-align:center;
+		}
+
+		.content {
+			padding: 4rem;
+
+			> *:last-child {
+				margin: 0;
+			}
+		}
+
+		> :last-child {
+			margin-bottom: 0;
+		}
+
+		&.alt {
+			background: none;
+			border-radius: 0;
+			border: 0;
+			box-shadow: none;
+			padding: 0;
+		}
+
+		&.columns {
+			@include vendor('display', 'flex');
+			@include vendor('align-items', 'center');
+			@include vendor('justify-content', 'center');
+
+			.content {
+				width: 50%;
+			}
+
+			.image {
+				width: 50%;
+			}
+		}
+
+		&.contact {
+			margin: 0 auto;
+			width: 32rem;
+		}
+
+		@include breakpoint('<=medium') {
+			&.columns {
+				@include vendor('flex-wrap', 'wrap');
+
+				.content {
+					@include vendor('order', '2');
+					width: 100%;
+				}
+
+				.image {
+					@include vendor('order', '1');
+					width: 100%;
+
+					img {
+						max-height: 35rem;
+						object-fit: cover;
+					}
+				}
+			}
+
+			&.contact {
+				width: 100%;
+			}
+		}
+
+		@include breakpoint('<=small') {
+			margin: 1.5rem 0;
+
+			.content {
+				padding: 2rem 1.5rem;
+			}
+		}
+	}

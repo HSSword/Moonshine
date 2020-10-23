@@ -1,0 +1,121 @@
+///
+/// Radiate by Pixelarity
+/// pixelarity.com | hello@pixelarity.com
+/// License: pixelarity.com/license
+///
+
+/* Button */
+
+	input[type="submit"],
+	input[type="reset"],
+	input[type="button"],
+	button,
+	.button {
+		@include vendor('appearance', 'none');
+		@include vendor('transition', (
+			'background-color #{_duration(transition)} ease-in-out',
+			'box-shadow #{_duration(transition)} ease-in-out',
+			'color #{_duration(transition)} ease-in-out'
+		));
+		background-color: transparent;
+		border-radius: _size(border-radius);
+		border: 0;
+		box-shadow: inset 0 0 0 1px _palette(fg-bold);
+		color: _palette(fg-bold) !important;
+		cursor: pointer;
+		display: inline-block;
+		font-size: 0.75rem;
+		font-weight: _font(weight);
+		height: _size(element-height);
+		letter-spacing: 0.225rem;
+		line-height: _size(element-height);
+		padding: 0 1.75rem;
+		text-align: center;
+		text-decoration: none;
+		text-transform: uppercase;
+		white-space: nowrap;
+
+		&:hover {
+			box-shadow: inset 0 0 0 1px _palette(accent1, bg);
+			color: _palette(accent1, bg) !important;
+
+			&:active {
+				background-color: transparentize(_palette(accent1, bg), 0.75);
+			}
+		}
+
+		&.primary {
+			box-shadow: none;
+			background-color: _palette(accent1, bg);
+			color: _palette(accent1, fg) !important;
+
+			&:hover {
+				background-color: lighten(_palette(accent1, bg), 5);
+				box-shadow: none;
+
+				&:active {
+					background-color: darken(_palette(accent1, bg), 5);
+				}
+			}
+		}
+
+		&.circle {
+			@include vendor('display', 'flex');
+			@include vendor('align-items', 'center');
+			@include vendor('justify-content', 'center');
+			border-radius: 100%;
+			height: 3rem;
+			width: 3rem;
+			position: relative;
+			padding: 0;
+
+			&:before {
+				content: '';
+				background-image: svg-url('<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 40 40" style="enable-background:new 0 0 40 40;" xml:space="preserve"><path fill="#{_palette(accent1, fg)}" d="M19.8,34.2c-0.3,0-0.3-0.1-0.4-0.1L6.6,21.4c-0.1-0.1-0.1-0.1-0.1-0.4c0-0.3,0.1-0.3,0.1-0.4l1.5-1.5 C8.2,19.1,8.2,19,8.5,19s0.3,0.1,0.4,0.1l9.2,9.2V5.9c0-0.1,0-0.2,0-0.2c0,0,0,0,0,0c0.1-0.1,0.2-0.1,0.4-0.1H21 c0.2,0,0.4,0.1,0.5,0.1c0,0,0,0.1,0,0.2v22.4l9.2-9.2c0.1-0.1,0.1-0.1,0.4-0.1c0.3,0,0.3,0.1,0.4,0.1l1.5,1.5 c0.1,0.1,0.1,0.1,0.1,0.4c0,0.3-0.1,0.3-0.1,0.4L20.2,34.1C20.1,34.1,20.1,34.2,19.8,34.2z"/></svg>');
+				position: absolute;
+				background-repeat: no-repeat;
+				background-position: center;
+				width: 100%;
+				height: 100%;
+				background-size: 1.75rem;
+			}
+
+			.label {
+				display: none;
+			}
+		}
+
+		&.small {
+			font-size: 0.8rem;
+			height: _size(element-height) * 0.75;
+			line-height: _size(element-height) * 0.75;
+			padding: 0 1.25rem;
+		}
+
+		&.large {
+			font-size: 1.35rem;
+			height: _size(element-height) * 1.25;
+			line-height: _size(element-height) * 1.25;
+			padding: 0 2rem;
+		}
+
+		&.wide {
+			min-width: 13rem;
+		}
+
+		&.icon {
+			&:before {
+				margin-right: 0.5rem;
+			}
+		}
+
+		&.fit {
+			width: 100%;
+		}
+
+		&.disabled,
+		&:disabled {
+			@include vendor('pointer-events', 'none');
+			opacity: 0.25;
+		}
+	}

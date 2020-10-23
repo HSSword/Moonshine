@@ -1,0 +1,1 @@
+SELECT clicks, unique_click FROM metric WHERE id_metric = 1;

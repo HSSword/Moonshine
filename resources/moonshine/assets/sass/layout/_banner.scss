@@ -1,0 +1,101 @@
+///
+/// Radiate by Pixelarity
+/// pixelarity.com | hello@pixelarity.com
+/// License: pixelarity.com/license
+///
+
+/* Banner */
+
+	@include keyframes('fade-in') {
+		0% { opacity: 1; }
+		100% { opacity: 0; }
+	}
+
+	#banner {
+		@include vendor('display','flex');
+		@include vendor('align-items', 'center');
+		@include vendor('justify-content', 'center');
+				background-attachment: fixed;
+		background:	url('data:image/svg+xml;charset=utf8,%3Csvg%20viewBox%3D%220%200%20512%20512%22%20width%3D%22512%22%20height%3D%22512%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cfilter%20id%3D%22noise%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.875%22%20result%3D%22noise%22%20%2F%3E%3CfeColorMatrix%20type%3D%22matrix%22%20values%3D%220.09765625%200%200%200%200%200%200.09765625%200%200%200%200%200%200.09765625%200%200%200%200%200%200.41015625%200%22%20%2F%3E%3C%2Ffilter%3E%3Crect%20filter%3D%22url%28%23noise%29%22%20x%3D%220%22%20y%3D%220%22%20width%3D%22512%22%20height%3D%22512%22%20fill%3D%22transparent%22%20opacity%3D%221%22%20%2F%3E%3C%2Fsvg%3E'),
+					linear-gradient(to top, rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
+					url('../../images/banner.jpg');
+		background-position: center, 0% 0%, center;
+		background-repeat: repeat, repeat, repeat;
+		background-size: 512px, auto, cover;
+		background-attachment: fixed;
+		border-top: solid 8px _palette(accent1, bg);
+		color: _palette(accent1,fg);
+		left: 50%;
+		margin-left: -50vw;
+		margin-top: (_size(header-height) * -1);
+		max-width: 99.55vw;
+		min-height: 40rem;
+		position: relative;
+		right: auto;
+		text-align: center;
+		width: 99.55vw;
+
+		&:after {
+			@include vendor('animation', 'fade-in 2s ease forwards');
+			@include vendor('pointer-events', 'none');
+			background: darken(_palette(bg), 50);
+			content: '';
+			height: 100%;
+			left: 0;
+			opacity: 1;
+			position: absolute;
+			top: 0;
+			width: 100%;
+		}
+
+		.content{
+			max-width: 48rem;
+			padding: 4rem;
+			width: 100%;
+
+			> * {
+				margin-bottom: 1.5rem;
+				margin-top: 1.5rem;
+
+				&:first-child {
+					margin-top: 0;
+				}
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+
+			h1 {
+				color: _palette(accent1,fg);
+
+				&.logo {
+					font-size: 1.25rem;
+					font-weight: _font(weight-bold);
+					letter-spacing: normal;
+					line-height: 1.5;
+					margin-bottom: 4rem !important;
+				}
+			}
+
+			p {
+				font-size: 1.25rem;
+				line-height: 1.75;
+			}
+		}
+
+		@include breakpoint('<=large') {
+			background-attachment: scroll;
+		}
+
+		@include breakpoint('<=medium') {
+			margin-top: -44px;
+		}
+	}
+
+	body.is-preload {
+		> #banner {
+			@include vendor('transform', 'scale(1.05)');
+			opacity: 0;
+		}
+	}

@@ -1,0 +1,6 @@
+# These includes are widely used in the core of Moonshine and should not be removed
+https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js
+https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js
+https://cdnjs.cloudflare.com/ajax/libs/plupload/3.1.2/plupload.full.min.js
+# https://js.stripe.com/v3/
+# https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js

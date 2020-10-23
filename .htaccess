@@ -1,0 +1,19 @@
+Options +FollowSymLinks
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+RewriteRule ^(sitemap\.xml)$ sitemap.php [L]
+RewriteRule ^(functions)/([a-zA-Z0-9_]+)$ functions/functions.php?f=$2&%{QUERY_STRING} [L]
+RewriteRule ^(admin-panel)$ index.php?p=login&admin=yes&%{QUERY_STRING} [L]
+RewriteRule ^(admin-panel)/([a-zA-Z0-9_]+)$ index.php?p=$2&admin=yes&%{QUERY_STRING} [L]
+
+RewriteRule ^([a-zA-Z0-9_]+)$ index.php?p=$1&%{QUERY_STRING}
+RewriteRule ^([a-zA-Z0-9_]+)/([a-zA-Z0-9_]+)$ index.php?p=$1&i=$2&%{QUERY_STRING}
+RewriteRule ^([a-zA-Z0-9_]+)/([a-zA-Z0-9_]+)/([a-zA-Z0-9_]+)$ index.php?p=$1&i=$2&j=$3&%{QUERY_STRING}
+RewriteRule ^$ index.php?p=index&%{QUERY_STRING} [L]
+
+
+</IfModule>
+
+ErrorDocument 404 /index.php?p=404

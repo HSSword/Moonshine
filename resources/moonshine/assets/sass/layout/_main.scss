@@ -1,0 +1,42 @@
+///
+/// Radiate by Pixelarity
+/// pixelarity.com | hello@pixelarity.com
+/// License: pixelarity.com/license
+///
+
+/* Main */
+
+	#wrapper {
+		@include vendor('display', 'flex');
+		@include vendor('flex-direction', 'column');
+		@include vendor('align-items', 'center');
+		@include vendor('justify-content', 'flex-start');
+		min-height: 100vh;
+		position: relative;
+		z-index: _misc(z-index-base + 1);
+
+		#main {
+			@include vendor('display', 'flex');
+			@include vendor('align-items', 'center');
+			@include vendor('justify-content', 'center');
+			@include vendor('flex-grow', '0');
+			@include vendor('flex-shrink', '0');
+			@include vendor('transition', ('opacity #{_duration(transition)} ease-in-out'));
+			text-align: left;
+			max-width: 100%;
+			position: relative;
+
+			.inner {
+				position: relative;
+				padding: 0 4rem;
+				max-width: 100%;
+				width: _size(container-width);
+			}
+
+			@include breakpoint('<=small') {
+				.inner {
+					padding: 0 1.5rem;
+				}
+			}
+		}
+	}

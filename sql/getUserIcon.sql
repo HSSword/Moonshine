@@ -1,0 +1,1 @@
+SELECT path FROM user_file WHERE id_user = ?;

@@ -1,0 +1,4 @@
+<?php
+
+setupDatabaseHook(_BASE_DB_HOOK, _BASE_DB_USR, _BASE_DB_PWD, _BASE_DB_NAME, _BASE_DB_ADDR, _BASE_DB_PORT);
+

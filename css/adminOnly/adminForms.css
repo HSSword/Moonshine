@@ -1,0 +1,98 @@
+:root{
+    --fonts: "Roboto Light", serif;
+}
+
+.factory-form {
+}
+
+.factory-form div.factory-form-entry {
+    width: 50%;
+    /*height: fit-content;*/
+    height: border-box;
+    float: left;
+}
+
+.factory-form div.factory-form-end {
+    float: none;
+}
+
+div.factory-form-buttons {
+    /*position: absolute;*/
+
+    -webkit-box-sizing: content-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: content-box;    /* Firefox, other Gecko */
+    box-sizing: content-box;         /* Opera/IE 8+ */
+    padding-top: 100px;
+    margin-top: 100px;
+    width: 100%;
+    justify-content: center;
+    top: 90%;
+    font-family: var(--fonts);
+}
+
+.htmlfactory-modal div {
+    height: auto !important;
+
+    max-height: 90vh;
+}
+
+.htmlfactory-modal {
+    overflow-y: auto !important;
+}
+
+div.factory-form-buttons button {
+    width: 20%;
+    height: 5vh;
+    font-family: var(--fonts);
+    font-size: 1.25em;
+}
+
+.modal-insert-edit-form h3{
+    font-weight: bolder;
+    font-size: 2.25em;
+    font-family: var(--fonts);
+}
+
+.factory-form label {
+    font-family: var(--fonts);
+    font-size: 1.25em;
+    padding: 1em 0 1em 0;
+}
+
+.factory-form input, .factory-form select {
+    height: 5vh;
+    width: 70%;
+    padding: 2px;
+    border-width: 1px;
+    font-family: var(--fonts);
+    font-size: 1.1em;
+    -webkit-box-sizing: content-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: content-box;    /* Firefox, other Gecko */
+    box-sizing: content-box;         /* Opera/IE 8+ */
+}
+
+.factory-table {
+
+}
+
+.factory-table input, .factory-table select {
+    height: 3vh;
+    padding: 2px;
+    border-width: 1px;
+    font-family: var(--fonts);
+    font-size: 1.1em;
+    -webkit-box-sizing: content-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: content-box;    /* Firefox, other Gecko */
+    box-sizing: content-box;         /* Opera/IE 8+ */
+}
+
+.factory-table button {
+    font-family: var(--fonts);
+    height: 3vh;
+    min-width: 5vw;
+    font-size: 1.1em;
+    -webkit-box-sizing: content-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: content-box;    /* Firefox, other Gecko */
+    box-sizing: content-box;         /* Opera/IE 8+ */
+
+}

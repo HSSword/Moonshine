@@ -1,0 +1,33 @@
+///
+/// Radiate by Pixelarity
+/// pixelarity.com | hello@pixelarity.com
+/// License: pixelarity.com/license
+///
+
+/* Footer */
+
+	#footer {
+		text-align:center;
+		margin: 4rem 0 6rem 0;
+
+		p {
+			color: _palette(fg-light);
+			line-height: 1.75;
+		}
+
+		ul.icons {
+			margin-bottom: 1.5rem;
+
+			li {
+				margin: 0.5rem;
+			}
+		}
+
+		@include breakpoint('<=small') {
+			margin: 2rem 0 4rem 0;
+
+			ul.icons {
+				margin-bottom: 1rem;
+			}
+		}
+	}
